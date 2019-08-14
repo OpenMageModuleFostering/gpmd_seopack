@@ -1,7 +1,7 @@
 <?php
 
 /**
- * GPMD SEOPack V0.1.1
+ * GPMD SEOPack V1.1.3
  * @copyright Copyright (c) 2012 GPMD Ltd (http://www.gpmd.co.uk)
  */
 
