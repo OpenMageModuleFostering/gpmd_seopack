@@ -4,41 +4,43 @@
  * @category   GPMD
  * @package    GPMD_SEOPack
  * @license    http://www.gpmd.co.uk
+ * @author     Adrian Duke <adrian@gpmd.co.uk>, Martin Dines <mdines@gpmd.co.uk>
  */
  -->
 <config>
     <modules>
         <GPMD_SEOPack>
-            <version>1.1.3</version>
+            <version>1.2.2</version>
         </GPMD_SEOPack>
     </modules>
-	<default>
-		<seopack>
-			<activated>
-				<site_enabled>1</site_enabled>
-				<filter_enabled>1</filter_enabled>
-				<category_enabled>1</category_enabled>
-				<product_enabled>1</product_enabled>
-				<ga_ignore>1</ga_ignore>
-			</activated>
-		</seopack>
-	</default>
+    <default>
+        <seopack>
+            <activated>
+                <site_enabled>1</site_enabled>
+                <filter_enabled>1</filter_enabled>
+                <category_enabled>1</category_enabled>
+                <product_enabled>1</product_enabled>
+                <ga_ignore>1</ga_ignore>
+                <rel_pagination_enabled>1</rel_pagination_enabled>
+            </activated>
+        </seopack>
+    </default>
     <global>
         <models>
             <seopack>
                 <class>GPMD_SEOPack_Model</class>
             </seopack>
-			<catalog>
-				<rewrite>
-					<product_visibility>GPMD_SEOPack_Model_Product_Visibility</product_visibility>
-				</rewrite>
-			</catalog>
+            <catalog>
+                <rewrite>
+                    <product_visibility>GPMD_SEOPack_Model_Product_Visibility</product_visibility>
+                </rewrite>
+            </catalog>
         </models>
-		<helpers>
-			<seopack>
-				<class>GPMD_SEOPack_Helper</class>
-			</seopack>
-		</helpers>
+        <helpers>
+            <seopack>
+                <class>GPMD_SEOPack_Helper</class>
+            </seopack>
+        </helpers>
         <resources>
             <seopack_setup>
                 <setup>
@@ -60,18 +62,26 @@
                 </connection>
             </seopack_read>
         </resources>
-		<events>
-			<controller_action_layout_generate_blocks_after>
-				<observers>
-					<seopack_controller_layout_generate_blocks_after>
-						<type>singleton</type>
-						<class>seopack/observer</class>
-						<method>setMetaRobots</method>
-					</seopack_controller_layout_generate_blocks_after>
-
-				</observers>
-			</controller_action_layout_generate_blocks_after>
-		</events>
+        <events>
+            <controller_action_layout_generate_blocks_after>
+                <observers>
+                    <seopack_controller_layout_generate_blocks_after>
+                        <type>singleton</type>
+                        <class>seopack/observer</class>
+                        <method>setMetaRobots</method>
+                    </seopack_controller_layout_generate_blocks_after>
+                </observers>
+            </controller_action_layout_generate_blocks_after>
+            <controller_action_layout_render_before_catalog_category_view>
+                <observers>
+                    <seopack_controller_layout_render_before_catalog_category_view>
+                        <type>singleton</type>
+                        <class>seopack/observer</class>
+                        <method>doPagination</method>
+                    </seopack_controller_layout_render_before_catalog_category_view>
+                </observers>
+            </controller_action_layout_render_before_catalog_category_view>
+        </events>
     </global>
     <adminhtml>
         <acl>

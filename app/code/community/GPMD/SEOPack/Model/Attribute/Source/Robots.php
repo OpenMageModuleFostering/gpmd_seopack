@@ -9,9 +9,10 @@
  *
  * @author Adrian Duke
  */
-class GPMD_SEOPack_Model_Attribute_Source_Robots extends Mage_Eav_Model_Entity_Attribute_Source_Abstract{
-
-    public function getAllOptions(){
+class GPMD_SEOPack_Model_Attribute_Source_Robots extends Mage_Eav_Model_Entity_Attribute_Source_Abstract
+{
+    public function getAllOptions()
+    {
         if (!$this->_options) {
             $this->_options = array(
 				array(
@@ -34,6 +35,5 @@ class GPMD_SEOPack_Model_Attribute_Source_Robots extends Mage_Eav_Model_Entity_A
         }
         return $this->_options;
     }
-	
 }
 

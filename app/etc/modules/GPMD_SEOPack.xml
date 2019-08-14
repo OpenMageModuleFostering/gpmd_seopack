@@ -5,9 +5,9 @@
             <active>true</active>
             <codePool>community</codePool>
             <depends>
-				<Mage_GoogleAnalytics />
-                <Mage_Catalog />
-				<Mage_Core />
+		<Mage_GoogleAnalytics />
+		<Mage_Catalog />
+		<Mage_Core />
             </depends>
         </GPMD_SEOPack>		
     </modules>

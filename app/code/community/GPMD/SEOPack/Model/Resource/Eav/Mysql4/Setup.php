@@ -1,7 +1,6 @@
 <?php
-
 /**
- * GPMD SEOPack V1.1.3
+ * GPMD SEOPack V0.1.1
  * @copyright Copyright (c) 2012 GPMD Ltd (http://www.gpmd.co.uk)
  */
 
@@ -10,15 +9,16 @@
  *
  * @author Adrian Duke
  */
-class GPMD_SEOPack_Model_Resource_Eav_Mysql4_Setup extends Mage_Eav_Model_Entity_Setup {
-	
+class GPMD_SEOPack_Model_Resource_Eav_Mysql4_Setup extends Mage_Eav_Model_Entity_Setup
+{
     /**
      * Install a new entity
      *
      * @return array entities to install
      * @access public
      */
-    public function getDefaultEntities() {
+    public function getDefaultEntities()
+    {
         return array(
             'catalog_category' => array(
                 'entity_model'					=> 'catalog/category',
