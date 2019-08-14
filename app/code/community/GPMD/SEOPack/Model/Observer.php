@@ -34,26 +34,31 @@ class GPMD_SEOPack_Model_Observer
 
             $this->_setMetaRobots($layout, $action);
         }
-
-        $this->_setGAIgnore($layout);
     }
 
-    protected function _setGAIgnore($layout)
+    public function setGAIgnore(Varien_Event_Observer $observer)
     {
         if (empty($this->_gaIgnoreEnabled)) {
             $this->_gaIgnoreEnabled = Mage::getStoreConfig(self::XML_PATH_GA_IGNORE);
         }
 
         if ($this->_gaIgnoreEnabled) {
-            $intersect = array_intersect_key(self::$_matches, $_SERVER);
+            $layout = $observer->getEvent()->getLayout();
 
-            if (!empty($intersect)) {
-                foreach ($intersect as $match => $values) {
-                    foreach ($values as $value) {
-                        if ($_SERVER[$match] == $value) {
-                            $layout->getBlock('after_body_start')->unsetChild('google_analytics');
-                            break 2;
-                        }
+            $this->_setGAIgnore($layout);
+        }
+    }
+
+    protected function _setGAIgnore($layout)
+    {
+        $intersect = array_intersect_key(self::$_matches, $_SERVER);
+
+        if (!empty($intersect)) {
+            foreach ($intersect as $match => $values) {
+                foreach ($values as $value) {
+                    if ($_SERVER[$match] == $value) {
+                        $layout->getBlock('after_body_start')->unsetChild('google_analytics');
+                        break 2;
                     }
                 }
             }

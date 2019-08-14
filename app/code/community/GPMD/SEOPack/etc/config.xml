@@ -10,7 +10,7 @@
 <config>
     <modules>
         <GPMD_SEOPack>
-            <version>1.2.2</version>
+            <version>1.2.3</version>
         </GPMD_SEOPack>
     </modules>
     <default>
@@ -65,11 +65,16 @@
         <events>
             <controller_action_layout_generate_blocks_after>
                 <observers>
-                    <seopack_controller_layout_generate_blocks_after>
+                    <seopack_controller_layout_generate_blocks_after_robots>
                         <type>singleton</type>
                         <class>seopack/observer</class>
                         <method>setMetaRobots</method>
-                    </seopack_controller_layout_generate_blocks_after>
+                    </seopack_controller_layout_generate_blocks_after_robots>
+                    <seopack_controller_layout_generate_blocks_after_ga>
+                        <type>singleton</type>
+                        <class>seopack/observer</class>
+                        <method>setGAIgnore</method>
+                    </seopack_controller_layout_generate_blocks_after_ga>
                 </observers>
             </controller_action_layout_generate_blocks_after>
             <controller_action_layout_render_before_catalog_category_view>

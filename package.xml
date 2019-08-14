@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
     <name>gpmd_seopack</name>
-    <version>1.2.2</version>
+    <version>1.2.3</version>
     <stability>stable</stability>
     <license uri="http://opensource.org/licenses/osl-3.0.php">OSL v3</license>
     <channel>community</channel>
@@ -9,13 +9,11 @@
     <summary>Our SEOPack is designed to improve the on-page optimisation of your website. Features include: custom meta robots tags, meta robots rules for filter pages, rel meta tags for pagination, product orphaning and top sites protection.</summary>
     <description>The SEOPack module will help to improve your search engine rankings by allowing you to assign custom meta robots tags, enable rel meta tags for paginated pages, orphaning / discontinuing products (products only available via direct URL) and assigning meta robots rules to filtered category pages / layered navigation pages. This gives you added control over the indexation of product pages, category pages and filter pages.&#xD;
 This module will eliminate several often fatal ecommerce SEO issues.</description>
-    <notes>- Bugfix: Configuration tab always first open when viewing system configuration&#xD;
-- Created uninstall script&#xD;
-- General housekeeping</notes>
-    <authors><author><name>Martin Dines</name><user>martindines</user><email>martin.dines@live.co.uk</email></author><author><name>Adrian Duke</name><user>aduke</user><email>adrian@gpmd.co.uk</email></author></authors>
-    <date>2013-07-09</date>
-    <time>14:38:06</time>
-    <contents><target name="magecommunity"><dir name="GPMD"><dir name="SEOPack"><dir name="Helper"><file name="Data.php" hash="146ff6630ae9e18910701ca0daf3752e"/></dir><dir name="Model"><dir name="Attribute"><dir name="Source"><file name="Robots.php" hash="25f1ca9357c3673776b0da47f68c727b"/></dir></dir><file name="Observer.php" hash="07a50d82e173275c003bc32eb16f7ee7"/><file name="Paginator.php" hash="b4a213182e32f081ceff8f00517147d7"/><dir name="Product"><file name="Visibility.php" hash="00e6e01cb45334fe5917073fb633ed48"/></dir><dir name="Resource"><dir name="Eav"><dir name="Mysql4"><file name="Setup.php" hash="3e0d7b2033d5f67e49c592aa3df9cc4f"/></dir></dir></dir></dir><dir name="etc"><file name="config.xml" hash="7ca8816f7b2e2d9a94d040edce145a3f"/><file name="system.xml" hash="e657a83c2c49c603f91f6764973377c2"/></dir><dir name="sql"><dir name="seopack_setup"><file name="mysql4-install-0.1.1.php" hash="b87ea79a6da95e8782731d4d8d8ea52b"/><file name="mysql4-uninstall.php" hash="5dee05c1406e6ff20b987bb45811a3b7"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="GPMD_SEOPack.xml" hash="531cc530057281a087027c5b5af8145f"/></dir></target></contents>
+    <notes>Bugfix: Prevent error caused when All Meta Robots disabled</notes>
+    <authors><author><name>Martin Dines</name><user>martindines</user><email>mdines@gpmd.co.uk</email></author><author><name>Adrian Duke</name><user>adrianduke</user><email>adrian@gpmd.co.uk</email></author><author><name>GPMD Ltd</name><user>gpmd</user><email>support@gpmd.co.uk</email></author></authors>
+    <date>2013-07-12</date>
+    <time>10:30:19</time>
+    <contents><target name="magecommunity"><dir name="GPMD"><dir name="SEOPack"><dir name="Helper"><file name="Data.php" hash="146ff6630ae9e18910701ca0daf3752e"/></dir><dir name="Model"><dir name="Attribute"><dir name="Source"><file name="Robots.php" hash="25f1ca9357c3673776b0da47f68c727b"/></dir></dir><file name="Observer.php" hash="1611129cc8e74013490ad6e3b5dfa83c"/><file name="Paginator.php" hash="b4a213182e32f081ceff8f00517147d7"/><dir name="Product"><file name="Visibility.php" hash="00e6e01cb45334fe5917073fb633ed48"/></dir><dir name="Resource"><dir name="Eav"><dir name="Mysql4"><file name="Setup.php" hash="3e0d7b2033d5f67e49c592aa3df9cc4f"/></dir></dir></dir></dir><dir name="etc"><file name="config.xml" hash="926ea669a8eb7d05f6888ddffbb2be84"/><file name="system.xml" hash="e657a83c2c49c603f91f6764973377c2"/></dir><dir name="sql"><dir name="seopack_setup"><file name="mysql4-install-0.1.1.php" hash="b87ea79a6da95e8782731d4d8d8ea52b"/><file name="mysql4-uninstall.php" hash="5dee05c1406e6ff20b987bb45811a3b7"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="GPMD_SEOPack.xml" hash="cc7942149d25a5a05bc4835ec7afa286"/></dir></target></contents>
     <compatible/>
     <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
 </package>
