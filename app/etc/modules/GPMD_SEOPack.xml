@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config>
+    <modules>		
+        <GPMD_SEOPack>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+				<Mage_GoogleAnalytics />
+                <Mage_Catalog />
+				<Mage_Core />
+            </depends>
+        </GPMD_SEOPack>		
+    </modules>
+</config>
