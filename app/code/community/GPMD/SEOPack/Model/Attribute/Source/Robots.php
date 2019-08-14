@@ -15,10 +15,10 @@ class GPMD_SEOPack_Model_Attribute_Source_Robots extends Mage_Eav_Model_Entity_A
     {
         if (!$this->_options) {
             $this->_options = array(
-				array(
+                array(
                     'value' => '',
                     'label' => Mage::helper('seopack')->__('-- Magento Default --'),
-				),
+                ),
                 array(
                     'value' => 'NOINDEX,FOLLOW',
                     'label' => Mage::helper('seopack')->__('NOINDEX, FOLLOW'),

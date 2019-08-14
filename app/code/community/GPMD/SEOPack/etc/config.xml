@@ -10,19 +10,25 @@
 <config>
     <modules>
         <GPMD_SEOPack>
-            <version>1.2.3</version>
+            <version>1.3.0</version>
         </GPMD_SEOPack>
     </modules>
     <default>
         <seopack>
-            <activated>
+            <metarobots>
                 <site_enabled>1</site_enabled>
-                <filter_enabled>1</filter_enabled>
                 <category_enabled>1</category_enabled>
                 <product_enabled>1</product_enabled>
-                <ga_ignore>1</ga_ignore>
+                <filter_enabled>1</filter_enabled>
+                <treat_category_as_filter>1</treat_category_as_filter>
+                <treat_sort_as_filter>1</treat_sort_as_filter>
+                <search_enabled>1</search_enabled>
+                <cms_page_enabled>1</cms_page_enabled>
+            </metarobots>
+            <misc>
                 <rel_pagination_enabled>1</rel_pagination_enabled>
-            </activated>
+                <ga_ignore>1</ga_ignore>
+            </misc>
         </seopack>
     </default>
     <global>
@@ -62,6 +68,8 @@
                 </connection>
             </seopack_read>
         </resources>
+    </global>
+    <frontend>
         <events>
             <controller_action_layout_generate_blocks_after>
                 <observers>
@@ -87,8 +95,28 @@
                 </observers>
             </controller_action_layout_render_before_catalog_category_view>
         </events>
-    </global>
+    </frontend>
     <adminhtml>
+        <events>
+            <adminhtml_cms_page_edit_tab_meta_prepare_form>
+                <observers>
+                    <gpmd_seopack_cms_page_edit_tab_meta>
+                        <type>singleton</type>
+                        <class>seopack/observer</class>
+                        <method>addRobotsToCmsPages</method>
+                    </gpmd_seopack_cms_page_edit_tab_meta>
+                </observers>
+            </adminhtml_cms_page_edit_tab_meta_prepare_form>
+            <cms_page_prepare_save>
+                <observers>
+                    <gpmd_seopack_cms_page_form_save>
+                        <type>singleton</type>
+                        <class>seopack/observer</class>
+                        <method>saveRobotsToCmsPages</method>
+                    </gpmd_seopack_cms_page_form_save>
+                </observers>
+            </cms_page_prepare_save>
+        </events>
         <acl>
             <resources>
                 <admin>

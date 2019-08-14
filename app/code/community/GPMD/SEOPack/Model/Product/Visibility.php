@@ -11,8 +11,8 @@
  */
 class GPMD_SEOPack_Model_Product_Visibility extends Mage_Catalog_Model_Product_Visibility
 {
-	const VISIBILITY_ORPHANED = 5;
-	
+    const VISIBILITY_ORPHANED = 5;
+
     /**
      * Retrieve visible in site ids array
      *
@@ -22,7 +22,7 @@ class GPMD_SEOPack_Model_Product_Visibility extends Mage_Catalog_Model_Product_V
     {
         return array(self::VISIBILITY_IN_SEARCH, self::VISIBILITY_IN_CATALOG, self::VISIBILITY_BOTH, self::VISIBILITY_ORPHANED);
     }
-	
+
     /**
      * Retrieve option array
      *
@@ -38,7 +38,7 @@ class GPMD_SEOPack_Model_Product_Visibility extends Mage_Catalog_Model_Product_V
             self::VISIBILITY_BOTH        => Mage::helper('catalog')->__('Catalog, Search')
         );
     }
-	
+
     /**
      * Retrieve all options
      *
@@ -47,7 +47,7 @@ class GPMD_SEOPack_Model_Product_Visibility extends Mage_Catalog_Model_Product_V
     static public function getAllOption()
     {
         $options = self::getOptionArray();
-        array_unshift($options, array('value'=>'', 'label'=>''));
+        array_unshift($options, array('value' => '', 'label' => ''));
         return $options;
     }
 
@@ -59,11 +59,11 @@ class GPMD_SEOPack_Model_Product_Visibility extends Mage_Catalog_Model_Product_V
     static public function getAllOptions()
     {
         $res = array();
-        $res[] = array('value'=>'', 'label'=> Mage::helper('catalog')->__('-- Please Select --'));
+        $res[] = array('value' => '', 'label' => Mage::helper('catalog')->__('-- Please Select --'));
         foreach (self::getOptionArray() as $index => $value) {
             $res[] = array(
-               'value' => $index,
-               'label' => $value
+                'value' => $index,
+                'label' => $value
             );
         }
         return $res;
