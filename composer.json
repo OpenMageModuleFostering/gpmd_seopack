@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/gpmd_seopack",
+    "name": "OpenMageModuleFostering\/gpmd_seopack",
     "type": "magento-module",
     "license": "OSL-v3",
     "homepage": "",
     "description": "Our SEOPack is designed to improve the on-page optimisation of your website. Features include: custom meta robots tags, meta robots rules for filter pages, rel meta tags for pagination, product orphaning and top sites protection.",
     "authors": [
-    {
-        "name": "Adrian Duke",
-        "email": "adrian@gpmd.co.uk"
-    }
-],
+        {
+            "name": "Adrian Duke",
+            "email": "adrian@gpmd.co.uk"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
